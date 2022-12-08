@@ -19,10 +19,9 @@ public class Repo {
         return toDoList;
     }
 
-
-    public void addTodoRepo(ToDo newTodo) {
+    public boolean addTodoRepo(ToDo newTodo) {
         newTodo.setId(addOneToTheId());
-        toDoList.add(newTodo);
+        return toDoList.add(newTodo);
     }
 
     private String addOneToTheId(){
@@ -66,5 +65,9 @@ public class Repo {
             }
         }
         toDoList.remove(toDo);
+    }
+
+    public void deleteTodoRepoWieMuslim(String id){
+        toDoList.remove(getToDoById(id));
     }
 }

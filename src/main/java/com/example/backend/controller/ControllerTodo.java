@@ -21,12 +21,12 @@ public class ControllerTodo {
     }
 
     @PostMapping("/api/todo")
-    public void postATodo(@RequestBody ToDo newTodo){
-        service.addTodoService(newTodo);
+    public boolean postATodo(@RequestBody ToDo newTodo){
+        return service.addTodoService(newTodo);
     }
 
     @GetMapping("/api/todo/{id}")
-    public ToDo getTodos(@PathVariable String id){
+    public ToDo getTodoById(@PathVariable String id){
         return service.getToDoByIdService(id);
     }
 

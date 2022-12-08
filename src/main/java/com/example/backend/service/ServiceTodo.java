@@ -19,8 +19,8 @@ public class ServiceTodo {
     }
 
 
-    public void addTodoService(ToDo newTodo){
-        repo.addTodoRepo(newTodo);
+    public boolean addTodoService(ToDo newTodo){
+        return repo.addTodoRepo(newTodo);
     }
 
     public ToDo getToDoByIdService(String id){
