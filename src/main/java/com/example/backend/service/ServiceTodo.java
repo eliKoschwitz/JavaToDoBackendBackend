@@ -18,8 +18,7 @@ public class ServiceTodo {
         return repo.getToDoListRepo();
     }
 
-
-    public boolean addTodoService(ToDo newTodo){
+    public ToDo addTodoService(ToDo newTodo){
         return repo.addTodoRepo(newTodo);
     }
 
@@ -27,11 +26,11 @@ public class ServiceTodo {
         return repo.getToDoById(id);
     }
 
-    public void putNewStatusService(String id, ToDo toDoUpdate) {
-        repo.updateToDo(id, toDoUpdate);
+    public ToDo putNewStatusService(String id, ToDo toDoUpdate) {
+        return repo.updateToDoRepo(id, toDoUpdate);
     }
 
-    public void deleteTodoService(String id) {
-        repo.deleteTodoRepo(id);
+    public List<ToDo> deleteTodoService(String id) {
+        return repo.deleteTodoRepo(id);
     }
 }

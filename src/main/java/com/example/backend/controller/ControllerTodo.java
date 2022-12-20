@@ -21,7 +21,7 @@ public class ControllerTodo {
     }
 
     @PostMapping("/api/todo")
-    public boolean postATodo(@RequestBody ToDo newTodo){
+    public ToDo postATodo(@RequestBody ToDo newTodo){
         return service.addTodoService(newTodo);
     }
 
@@ -31,13 +31,12 @@ public class ControllerTodo {
     }
 
     @PutMapping("/api/todo/{id}")
-    public void updateTodo(@PathVariable String id, @RequestBody ToDo toDoUpdate){
-        service.putNewStatusService(id, toDoUpdate);
-        service.getToDoByIdService(id);
+    public ToDo updateTodo(@PathVariable String id, @RequestBody ToDo toDoUpdate){
+        return service.putNewStatusService(id, toDoUpdate);
     }
 
-    @DeleteMapping("api/todo/{id}")
-    public void deleteTodo(@PathVariable String id) {
-        service.deleteTodoService(id);
+    @DeleteMapping("/api/todo/{id}")
+    public List<ToDo> deleteTodo(@PathVariable String id) {
+        return service.deleteTodoService(id);
     }
 }
